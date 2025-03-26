@@ -1,9 +1,7 @@
-from logger import configure_logger
 import hashlib
 import shutil
 import os
 
-logging = configure_logger("./logs/log_today.log")
 
 class FileOperator:
     """
@@ -32,6 +30,8 @@ class FileOperator:
     """
     @staticmethod
     def replicate_file(source_path: str, destiny_path: str):
+        from utils.logger import configure_logger
+        logging = configure_logger("./logs/log_today.log")
         try:
             logging.info(f"start file replication: {source_path} - {destiny_path}")
             destiny_path = os.path.dirname(destiny_path)
@@ -60,6 +60,9 @@ class FileOperator:
 
     @staticmethod
     def compare_file(source_path: str, destiny_path: str):
+        from utils.logger import configure_logger
+        logging = configure_logger("./logs/log_today.log")
+
         try:
             logging.info(f"starting comparison of two files: {source_path} - {destiny_path}")
             with open(source_path, "rb") as source_file:
@@ -87,6 +90,3 @@ class FileOperator:
         except Exception as e:
             logging.error("ERROR: unknown exception occured.")
             logging.error(f"{e}")
-
-# FileOperator.replicate_file("/Users/ivaldir/Documents/veeam asignment/logs/log_today.log", "/Users/ivaldir/Documents/veeam asignment/utils/")
-# print(FileOperator.compare_file("/Users/ivaldir/Documents/veeam asignment/main.py", "/Users/ivaldir/Documents/veeam asignment/main.py"))

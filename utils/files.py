@@ -5,31 +5,35 @@ import os
 
 class FileOperator:
     """
-        This class has the method operations used for files in the SyncFile, for copying files 
-        from one path to another and for comparing two files.
+    This class has the method operations used for files in the SyncFile, for copying files 
+    from one path to another and for comparing two files.
 
-        Methods:
-            replicated_file -> Copies a file from the source path, into a destiny path, passed by 
-            the user.
-
-                args:
-                    source_path: str
-                    destiny_path: str
-
-                returns:
-                    none
-
-            compare_file -> compares the contents between two files, and returns the difference.
-
-                args:
-                   source_path: str
-                   destiny_path: str
-
-                returns:
-                    True - if files are equal | False - if they are different
+    Attributes:
+        None
     """
+
     @staticmethod
-    def replicate_file(source_path: str, destiny_path: str, logger):
+    def replicate_file(source_path: str, destiny_path: str, logger) -> None:
+        """
+        This function takes in the source file and replicates/copies it to the destiny path, passed in the paramethers.
+
+        Args:
+            source_path: str
+            destiny_path: str
+            logger: logger
+        
+        Returns:
+            None
+
+        Raises:
+           FileNotFoundError: When the source file path passed is not found or inexistent in the disk
+           PermissionError: When the current user used to run the program does not have enough permissions to copy files from source folder to destiny folder. 
+           shutil.SameFileError: When the paths passed to the function referenciates to the same file.
+           IsADirectoryError: When the path passed as source referenciates to a directory, instead of a file.
+           TypeError: When there's an error with the format string passed as a path, for source and or for destiny path.
+           Exception: Any other exception not expecified throught the except blocks specificly will be thrown freely and logged.
+        """
+        
         try:
             logger.info(f"start file replication: {source_path} - {destiny_path}")
             destiny_path = os.path.dirname(destiny_path)
@@ -57,7 +61,25 @@ class FileOperator:
             logger.error(f"{e}")
 
     @staticmethod
-    def compare_file(source_path: str, destiny_path: str, logger):
+    def compare_file(source_path: str, destiny_path: str, logger) -> None:
+        """
+        This function takes in two files paths, and compares two generate hashes using the MD5 algorithm, checking if the two files are equal.
+
+        Args:
+            source_path: str
+            destiny_path: str
+            logger: logger
+
+        Returns:
+            None
+        
+        Raises:
+            FileNotFoundError: When the source file path passed is not found or inexistent in the disk
+            PermissionError: When the current user used to run the program does not have enough permissions to copy files from source folder to destiny folder. 
+            UnicodeDecodeError: This exception happens when the decoding process fails.
+            TypeError: When there's an error with the format string passed as a path, for source and or for destiny path.
+            Exception: Any other exception not expecified throught the except blocks specificly will be thrown freely and logged.
+        """
         try:
             logger.info(f"starting comparison of two files: {source_path} - {destiny_path}")
             with open(source_path, "rb") as source_file:

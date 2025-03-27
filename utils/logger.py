@@ -1,8 +1,17 @@
 from loguru import logger
-import datetime as dt
 import sys
 
-def configure_logger(log_file_path):
+def configure_logger(log_file_path: str) -> logger:
+    """
+    This function configures the loguru logger instance, that will be used throught the application.
+
+    Args:
+        log_file_path: str
+
+    Returns:
+        logger: logger
+    """
+
     logger.add(
         log_file_path,
         level="INFO",

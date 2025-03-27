@@ -3,7 +3,7 @@ from syncronizer import SyncFold
 import argparse
 import time
 
-def parse_passed_arguments():
+def parse_passed_arguments() -> argparse:
     parser = argparse.ArgumentParser(description="Folder Synchronization Settings")
     parser.add_argument("--source_folder", help="Path to source folder")
     parser.add_argument("--replica_folder", help="Path to destiny folder")

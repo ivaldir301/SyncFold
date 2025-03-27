@@ -19,8 +19,3 @@ def configure_logger(log_file_path):
     )
     logger.info("Logger configured successfully.")
     return logger
-
-# log_directory = "./logs/logs_today_v2.log"
-# logger = configure_logger(log_directory)
-
-# logger.info("Logging from the main module.")

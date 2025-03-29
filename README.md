@@ -25,7 +25,7 @@ SincFold takes in 3 paramethers:
 python3 -m venv venv
 source venv/bin/activate # if you're on mac/linux
 env\Scripts\activate # if you're on windows
-pip3 -r install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 2 - Run the tests to ensure the program is working correctly in the environment:

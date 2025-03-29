@@ -6,6 +6,8 @@ import os
 
 logger = configure_logger("logs/log_testing.log")
 
+# This function checks if the replicate_file can take one file path and a directory path, and replicate the file in the 
+# destiny directory
 def test_replicate_file():
     test_origin_file: str = ".testing/test1/"
     test_file_path2: str = ".testing/replilca/"
@@ -30,7 +32,8 @@ def test_replicate_file():
     assert test_origin_md5 == test_destiny_md5
     shutil.rmtree(".testing/")
 
-
+# This function checks if the compare_files_with_equal is capable of checking if two files which are the exact same, 
+# can detect the're similarity
 def test_compare_files_with_equal():
     test_file1: str = ".testing/test1.txt"
     test_file2: str = ".testing/test2.txt"
@@ -58,6 +61,8 @@ def test_compare_files_with_equal():
     assert function_result == compare_result
     shutil.rmtree(".testing/")
 
+# This function tests if the compare_files_with_different can detect if two files, with different content
+# are indeed different files
 def test_compare_files_with_different():
     test_file1: str = ".testing/test1.txt"
     test_file2: str = ".testing/test2.txt"

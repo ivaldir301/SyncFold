@@ -40,10 +40,12 @@ python3 main.py --source /Users/user/test1 --replica /Users/user/test2 --log_fol
 ```
 
 Make sure to replace the folders paths:
-- /Users/user/test1: to a directory you have in your disk, with files and subdirectories you want to syncronize in another directory
-- /Users/user/test2: a existing directory or a path to one, where you want your source folder to be replicated
-- /Users/user/logs/log_test.log: a path to the file you want your logs to go to
-- 30: the time interval in seconds, you want the syncronization process to happen
+
+- `/Users/user/test1`: A directory you have on your disk, with files and subdirectories you want to synchronize in another directory.
+- `/Users/user/test2`: An existing directory or a path to one, where you want your source folder to be replicated.
+- `/Users/user/logs/log_test.log`: A path to the file you want your logs to go to.
+- `30`: The time interval in seconds you want the synchronization process to happen.
+
 
 ## Licence
 

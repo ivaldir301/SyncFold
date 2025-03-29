@@ -12,10 +12,10 @@ creating an exact copy of similar files that are in both folders, but the copy i
 It will also show live logs of all the process, while also saving the logs to a log file, in the file path provided for the logs.
 
 SincFold takes in 3 paramethers:
-``` --source ```- the source directory which you want to syncronize from
-``` --replica ``` - the destiny/replica directory, which you want the source folder to be syncronized with
-``` --log_folder ``` - the path which you want the logger file to be created
-``` --interval ``` - the time interval in which you want the syncronization process to happen (indicated in seconds)
+``` --source ```the source directory which you want to syncronize from
+``` --replica ``` the destiny/replica directory, which you want the source folder to be syncronized with
+``` --log_folder ``` the path which you want the logger file to be created
+``` --interval ``` the time interval in which you want the syncronization process to happen (indicated in seconds)
 
 ## Example of running it
 
